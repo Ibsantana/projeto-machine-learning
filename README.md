@@ -125,8 +125,8 @@ Em um cenário real, a aprovação de um estudante depende de diversos fatores q
 ### 1. Clonar o repositório
 
 ```bash
-git clone https://github.com/lbsantana/projeto-machine-learning.git
-```
+
+git clone https://github.com/Ibsantana/projeto-machine-learning.git
 
 ### 2. Entrar na pasta do projeto
 
