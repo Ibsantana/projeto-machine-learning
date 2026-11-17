@@ -177,4 +177,4 @@ Projeto desenvolvido para fins de aprendizado, com aplicação prática de conce
 
 ## Autora
 
-[Isabella Santana](https://github.com/lbsantana)
+[Isabella Santana](https://github.com/Ibsantana)
