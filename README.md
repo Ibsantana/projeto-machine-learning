@@ -2,91 +2,120 @@
 
 ## Sobre o projeto
 
-Este projeto utiliza conceitos de Machine Learning para desenvolver um modelo de classificação capaz de prever se um estudante será aprovado ou reprovado com base em duas variáveis:
+Este projeto utiliza conceitos de **Ciência de Dados e Machine Learning** para desenvolver um modelo de classificação capaz de prever se um estudante será aprovado ou reprovado com base em duas informações:
 
 - Horas de estudo.
 - Frequência nas aulas.
 
-O objetivo é aplicar conceitos fundamentais de Ciência de Dados e Aprendizado de Máquina, passando pelas etapas de geração e análise de dados, preparação da base, treinamento e avaliação de um modelo preditivo.
+O objetivo é praticar as principais etapas de um projeto de Machine Learning, desde a criação e análise dos dados até o treinamento e a avaliação de um modelo preditivo.
 
 ## Tecnologias utilizadas
 
-- **Python:** linguagem utilizada no desenvolvimento.
-- **Pandas:** manipulação e análise dos dados.
-- **Scikit-learn:** treinamento e avaliação do modelo de Machine Learning.
-- **VS Code:** ambiente de desenvolvimento.
-- **Git e GitHub:** versionamento e publicação do projeto.
+- Python
+- Pandas
+- Scikit-learn
+- VS Code
+- Git e GitHub
 
-## Como o projeto funciona
+## Como funciona
 
 O projeto segue as seguintes etapas:
 
-1. Geração de 100 registros de estudantes com dados sintéticos.
-2. Organização dos dados em um DataFrame utilizando Pandas.
-3. Análise exploratória por meio de estatísticas descritivas.
-4. Separação das variáveis de entrada (*features*) e da variável-alvo (*target*).
-5. Divisão dos dados em conjuntos de treinamento e teste.
-6. Treinamento de um modelo de Árvore de Decisão.
-7. Realização de previsões e avaliação do desempenho do modelo.
+1. São gerados 100 registros de estudantes com dados sintéticos.
+2. Cada estudante recebe valores aleatórios de horas de estudo e frequência.
+3. Os dados são organizados em um DataFrame utilizando Pandas.
+4. São realizadas análises estatísticas para compreender os dados.
+5. As variáveis são separadas em features (entradas) e target (variável-alvo).
+6. Os dados são divididos em conjuntos de treinamento e teste.
+7. Um modelo de Árvore de Decisão é treinado com os dados de treinamento.
+8. O modelo realiza previsões com os dados de teste.
+9. O desempenho é avaliado por meio de métricas de classificação.
 
 ## Modelo de Machine Learning
 
 Foi utilizado o algoritmo **Decision Tree Classifier (Árvore de Decisão)**, disponível na biblioteca Scikit-learn.
 
-O modelo utiliza duas variáveis de entrada:
+O modelo utiliza as seguintes features:
 
-- `horas_estudo`: quantidade de horas dedicadas aos estudos.
-- `frequencia`: percentual de frequência nas aulas.
+- `horas_estudo`
+- `frequencia`
 
-A variável que o modelo busca prever é:
+A variável-alvo (target) é:
 
-- `aprovado`: indica se o estudante foi aprovado (`1`) ou reprovado (`0`).
+- `aprovado`
 
-### Divisão dos dados
+A classificação é representada por:
 
-A base de dados foi dividida em:
+- `1`: aprovado.
+- `0`: reprovado.
+
+### Regra utilizada para gerar os dados
+
+Para criar os dados sintéticos, foi definida uma regra artificial:
+
+- 5 ou mais horas de estudo e frequência igual ou superior a 75%: aprovado.
+- Caso contrário: reprovado.
+
+Essa regra é utilizada apenas para fins didáticos.
+
+## Divisão dos dados
+
+Os dados foram separados em:
 
 - **80% para treinamento:** utilizados para ensinar o modelo.
 - **20% para teste:** utilizados para avaliar as previsões.
 
+Foi utilizado `random_state=42` para manter a divisão reproduzível.
+
 ## Métricas de avaliação
 
-Para avaliar o desempenho do modelo, foram utilizadas as seguintes métricas:
+O desempenho do modelo foi avaliado utilizando as seguintes métricas:
 
-- **Acurácia (Accuracy):** percentual de previsões corretas em relação ao total de previsões.
-- **Precisão (Precision):** proporção de previsões positivas que realmente são positivas.
-- **Revocação (Recall):** proporção dos casos positivos reais que foram identificados corretamente.
-- **Pontuação F1 (F1-score):** combina Precision e Recall em uma única métrica.
-- **Matriz de confusão:** permite visualizar os acertos e erros do modelo.
+| Métrica | O que avalia |
+|---|---|
+| Acurácia (Accuracy) | Proporção total de previsões corretas. |
+| Precisão (Precision) | Proporção de previsões positivas que realmente são positivas. |
+| Recall | Proporção dos casos positivos reais identificados pelo modelo. |
+| F1-score | Equilíbrio entre Precision e Recall. |
+| Matriz de confusão | Mostra os acertos e erros das classificações. |
 
 ### Resultados obtidos
 
-Resultados observados no conjunto de teste:
+No conjunto de teste, foram obtidos os seguintes resultados:
 
 | Métrica | Resultado |
 |---|---:|
 | Acurácia (Accuracy) | 100% |
 | Precisão (Precision) | 100% |
-| Revocação (Recall) | 100% |
+| Recall | 100% |
 | F1-score | 100% |
+
+A matriz de confusão apresentou:
+
+```text
+[[12  0]
+ [ 0  8]]
+```
+
+Isso significa que o modelo classificou corretamente os 20 registros do conjunto de teste, sem apresentar falsos positivos ou falsos negativos.
 
 ## Limitações do projeto
 
-Este projeto utiliza dados sintéticos, ou seja, dados criados artificialmente para fins de aprendizado.
+Este projeto utiliza dados sintéticos e uma regra artificial para definir a aprovação dos estudantes.
 
-A aprovação dos estudantes é definida por uma regra simulada: o estudante precisa ter pelo menos 5 horas de estudo e 75% de frequência para ser considerado aprovado.
+Por isso, os resultados demonstram a capacidade do modelo de aprender essa regra simulada, mas não comprovam sua eficácia em situações educacionais reais.
 
-Por esse motivo, os resultados demonstram que o modelo conseguiu aprender a regra utilizada na geração dos dados. Eles não comprovam que o modelo teria o mesmo desempenho em situações educacionais reais.
+Em um cenário real, a aprovação de um estudante depende de diversos fatores que não são representados neste projeto.
 
 ## Como executar o projeto
 
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/Ibsantana/projeto-machine-learning.git
+git clone https://github.com/lbsantana/projeto-machine-learning.git
 ```
 
-### 2. Acesse a pasta do projeto
+### 2. Entre na pasta do projeto
 
 ```bash
 cd projeto-machine-learning
@@ -100,10 +129,10 @@ python -m venv .venv
 
 ### 4. Ative o ambiente virtual
 
-No Windows (PowerShell):
+No Windows, utilizando PowerShell:
 
 ```powershell
-.\.venv\Scripts\Activate.ps1
+.venv\Scripts\Activate.ps1
 ```
 
 ### 5. Instale as dependências
@@ -123,17 +152,14 @@ python main.py
 ```text
 projeto-machine-learning/
 │
-├── main.py
-├── requirements.txt
-├── README.md
 ├── .gitignore
-└── .venv/
+├── main.py
+├── README.md
+└── requirements.txt
 ```
-
-A pasta `.venv` corresponde ao ambiente virtual local e não precisa ser enviada ao GitHub.
 
 ## Status do projeto
 
-**Concluído:** projeto desenvolvido para fins de aprendizado, com aplicação prática de conceitos de Python, análise de dados e Machine Learning.
+Projeto desenvolvido para fins de aprendizado, com aplicação prática de conceitos fundamentais de Python, análise de dados e Machine Learning.
 
-O desenvolvimento também proporcionou prática com treinamento de modelos, classificação binária, avaliação de resultados e versionamento de código com Git e GitHub.
+**Autora:** lbsantana
