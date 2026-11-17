@@ -162,4 +162,4 @@ projeto-machine-learning/
 
 Projeto desenvolvido para fins de aprendizado, com aplicação prática de conceitos fundamentais de Python, análise de dados e Machine Learning.
 
-**Autora:** lbsantana
+**Autora:** https://github.com/Ibsantana
